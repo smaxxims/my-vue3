@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import Profile from '../views/Profile.vue'
 import Todo from '../views/profile/Todo.vue'
 import Post from '../views/profile/Post.vue'
+import PageNotFound from '../views/PageNotFound.vue'
 
 const routes = [
   {
@@ -43,6 +44,10 @@ const routes = [
         }
       */
     },
+  },
+  {
+    path: '/:pathMatch(.*)',
+    component: PageNotFound,
   },
 ]
 
