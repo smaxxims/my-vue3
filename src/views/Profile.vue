@@ -5,6 +5,7 @@
     <h1>Profile {{ id }}</h1>
     <h6>{{ userData }}</h6>
     <router-view :user="userData"></router-view>
+    <h1>Pass: {{ pw.name }}</h1>
   </div>
 </template>
 
@@ -15,12 +16,16 @@ export default {
       id: this.$route.params.id,
       userData: {},
       name: '',
+      pw: {}
     };
   },
   created() {
     fetch(`https://jsonplaceholder.typicode.com/users/${this.id}`)
     .then(response => response.json())
     .then(response => this.userData = response)
+    fetch(`http://localhost/my-php/?pw=pw1`)
+    .then(response => response.json())
+    .then(response => this.pw = JSON.parse(response))
   },
   methods: {
     
