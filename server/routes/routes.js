@@ -1,11 +1,9 @@
-import express from "express";
+const express = require("express");
 
-import {
-  showUsers
-} from "../controller/user.js";
+const showUsers = require("../controller/user.js");
 
 const router = express.Router();
 
 router.get("/users", showUsers);
 
-export default router;
+module.exports = router;

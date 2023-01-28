@@ -1,4 +1,4 @@
-import mysql from "mysql2";
+const mysql = require("mysql2");
 
 const db = mysql.createConnection({
     host: "sql7.freemysqlhosting.net",
@@ -7,4 +7,4 @@ const db = mysql.createConnection({
     database: "sql7593839",
 });
 
-export default db;
+module.exports = db;

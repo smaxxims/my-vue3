@@ -1,7 +1,6 @@
-import db from "../config/database.js";
+const db = require("../config/database.js");
 
-//get all users
-export const getUsers = (result) => {
+const getUsers = (result) => {
   db.query("SELECT * FROM user", (err, results) => {
     if (err) {
       console.log(err);
@@ -11,3 +10,5 @@ export const getUsers = (result) => {
     }
   });
 };
+
+module.exports = getUsers;
