@@ -6,7 +6,6 @@
     <h6>{{ userData }}</h6>
     <router-view :user="userData"></router-view>
     <h1>Pass: {{ pw }}</h1>
-    <h1>Pass: {{ pw.name }}</h1>
   </div>
 </template>
 
@@ -24,9 +23,17 @@ export default {
     fetch(`https://jsonplaceholder.typicode.com/users/${this.id}`)
     .then(response => response.json())
     .then(response => this.userData = response)
-    fetch(`https://dev-maxim.com/?pw=pw1`)
+    /* fetch(`https://dev-maxim.com/?pw=pw1`)
     .then(response => response.json())
-    .then(response => this.pw = JSON.parse(response))
+    .then(response => this.pw = JSON.parse(response)) */
+
+    fetch(`https://dev-maxim.com/?pw=pw1`, 
+        {
+            method: "GET", 
+            mode: 'no-cors'
+        }
+    ).then(response => response.json())
+    .then(response => this.pw = response)
   },
   methods: {
     
