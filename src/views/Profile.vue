@@ -5,11 +5,11 @@
     <h1>Profile {{ id }}</h1>
     <h6>{{ userData }}</h6>
     <router-view :user="userData"></router-view>
-    <h1>Pass: {{ pw }}</h1>
   </div>
 </template>
 
 <script>
+  
 export default {
   data() {
     return {
@@ -26,14 +26,6 @@ export default {
     /* fetch(`https://dev-maxim.com/?pw=pw1`)
     .then(response => response.json())
     .then(response => this.pw = JSON.parse(response)) */
-
-    fetch(`https://dev-maxim.com/?pw=pw1`, 
-        {
-            method: "GET", 
-            mode: 'no-cors'
-        }
-    ).then(response => response.json())
-    .then(response => this.pw = response)
   },
   methods: {
     

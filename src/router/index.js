@@ -3,14 +3,20 @@ import HomeView from '../views/HomeView.vue'
 import Profile from '../views/Profile.vue'
 import Todo from '../views/profile/Todo.vue'
 import Post from '../views/profile/Post.vue'
+import Login from '../views/Login.vue'
 import PageNotFound from '../views/PageNotFound.vue'
 
 const routes = [
   {
     path: '/',
+    name: 'login',
+    component: Login
+  },
+  /* {
+    path: '/',
     name: 'home',
     component: HomeView
-  },
+  }, */
   {
     path: '/about',
     name: 'about',
