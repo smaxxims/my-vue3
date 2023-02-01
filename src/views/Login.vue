@@ -6,7 +6,8 @@
   >
     <div class="heading flex justify-center mb-12">Login</div>
     <MText placeholder="Name"></MText>
-    <MText placeholder="Password"></MText>
+    <MText placeholder="Passwort"></MText>
+    <div class="mt-48"></div>
   </div>
 </template>
 

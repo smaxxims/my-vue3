@@ -34,11 +34,11 @@
     font-family: monospace;
     caret-color: white;
     caret-shape: block;
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 
   input::placeholder {
-    color: rgb(95, 95, 95);
+    color: #c561e8;
     font-family: monospace;
   }
 </style>
