@@ -5,7 +5,7 @@
       ref="divIn"
     >
       <input 
-        type="text"
+        :type="input_type"
         class="m-text"
         :placeholder="placeholder" 
         @focus="input_focus_in()"
@@ -18,7 +18,8 @@
 <script>
   export default {
     props: {
-      placeholder: String
+      placeholder: String,
+      input_type: String
     },
     methods: {
       input_focus_in() {

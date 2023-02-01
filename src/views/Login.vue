@@ -4,8 +4,14 @@
     class="" 
   >
     <div class="heading flex justify-center mt-10 mb-16">Login</div>
-    <MText placeholder="Name"></MText>
-    <MText placeholder="Passwort"></MText>
+    <MText 
+      input_type="text"
+      placeholder="Name"
+    ></MText>
+    <MText 
+      input_type="password"
+      placeholder="Passwort"
+    ></MText>
   </div>
 </template>
 
