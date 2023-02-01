@@ -1,10 +1,15 @@
 <template>
   <div class="div-out">
-    <div class="div-in">
+    <div 
+      class="div-in"
+      ref="divIn"
+    >
       <input 
-        :placeholder="placeholder" 
         type="text"
         class="m-text"
+        :placeholder="placeholder" 
+        @focus="input_focus_in()"
+        @focusout="input_focus_out()"
       >
     </div>
   </div>
@@ -14,6 +19,14 @@
   export default {
     props: {
       placeholder: String
+    },
+    methods: {
+      input_focus_in() {
+        this.$refs.divIn.style.boxShadow = '0px 3px 5px 2px #50d5ed'
+      },
+      input_focus_out() {
+        this.$refs.divIn.style.boxShadow = '0px 3px 5px 2px #c4c4c4'
+      }
     }
   }
 </script>
@@ -23,22 +36,23 @@
     margin: 1rem;
   }
   .div-in {
-    border-bottom: 1px solid white;
+    border-radius: 1rem;
+    box-shadow: 0px 3px 5px 2px #c4c4c4;
+    padding-left: 5px;
   }
   input {
     background-color: transparent;
-    color: white;
+    color: var(--text-color);
     width: 100%;
     outline: none;
     border: none;
-    font-family: monospace;
-    caret-color: white;
-    caret-shape: block;
+    font-family: var(--main-font-family);
+    caret-color: var(--main-color);
     font-size: 1.5rem;
+    height: 35px;
   }
-
   input::placeholder {
-    color: #c561e8;
-    font-family: monospace;
+    color: var(--main-color);
+    font-family: var(--main-font-family);
   }
 </style>
