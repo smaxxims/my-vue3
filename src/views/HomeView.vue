@@ -13,6 +13,11 @@ export default {
   name: 'HomeView',
   components: {
     HelloWorld
+  },
+  beforeCreate() {
+    let data = sessionStorage.getItem('login')
+    if(data !== 'true')
+    window.location = '/'
   }
 }
 </script>

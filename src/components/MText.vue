@@ -5,11 +5,12 @@
       ref="divIn"
     >
       <input 
-        :type="input_type"
         class="m-text"
+        :type="input_type"
         :placeholder="placeholder" 
         @focus="input_focus_in()"
         @focusout="input_focus_out()"
+        v-model="input"
       >
     </div>
   </div>
@@ -20,6 +21,11 @@
     props: {
       placeholder: String,
       input_type: String
+    },
+    data() {
+      return {
+        input: '',
+      };
     },
     methods: {
       input_focus_in() {

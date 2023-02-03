@@ -1,5 +1,4 @@
 <template>
-  
   <div 
     class="" 
   >
@@ -7,26 +6,75 @@
     <MText 
       input_type="text"
       placeholder="Name"
+      ref="name"
     ></MText>
+
     <MText 
       input_type="password"
       placeholder="Passwort"
+      ref="pass"
     ></MText>
+    <div class="flex justify-center mt-8">
+      <MButton 
+        @click="submit_login"
+        text="Login"
+      ></MButton>
+    </div>
+
   </div>
 </template>
 
 <script>
   import MText from "@/components/MText.vue";
+  import MButton from "@/components/MButton.vue";
 
   export default {
+    data() {
+      return {
+        name: '',
+        pass: ''
+      };
+    },
     components: {
-      MText
+      MText,
+      MButton
+    },
+    methods: {
+      submit_login() {
+        console.log('submit_login')
+        if(this.$refs.name.input !== '' 
+        && this.$refs.pass.input !== '') {
+          console.log('name', this.$refs.name.input)
+          console.log('pass', this.$refs.pass.input)
+
+          let is_user = false
+          this.$store.state.user.forEach(user => {
+            console.log('user', user)
+            console.log('user', user.name)
+            if(this.$refs.name.input === user.name
+            && this.$refs.pass.input === user.pass) {
+              is_user = true
+            }
+          })
+
+          console.log('let user',is_user)
+
+          if(is_user) {
+            sessionStorage.setItem("login", "true");
+            window.open('/home')
+          } else {
+            alert('Login fehlgeschlagen.')
+            return
+          }
+        } {
+          
+        }
+      }
     }
   }
 </script>
 
 <style scoped>
-
   .heading {
     color: var(--main-color);
     font-size: 3rem;
