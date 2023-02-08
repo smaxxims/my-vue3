@@ -61,7 +61,8 @@
 
           if(is_user) {
             sessionStorage.setItem("login", "true");
-            window.open('/home')
+            this.$router.push('/home');
+            //window.open('/home')
           } else {
             alert('Login fehlgeschlagen.')
             return
