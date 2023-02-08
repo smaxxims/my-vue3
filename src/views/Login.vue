@@ -25,8 +25,8 @@
 </template>
 
 <script>
-  import MText from "@/components/MText.vue";
-  import MButton from "@/components/MButton.vue";
+  import MText from "@/components/MText.vue"
+  import MButton from "@/components/MButton.vue"
 
   export default {
     data() {
@@ -60,8 +60,8 @@
           console.log('let user',is_user)
 
           if(is_user) {
-            sessionStorage.setItem("login", "true");
-            this.$router.push('/home');
+            sessionStorage.setItem("login", "true")
+            this.$router.push('/home')
             //window.open('/home')
           } else {
             alert('Login fehlgeschlagen.')

@@ -17,7 +17,7 @@ export default {
   beforeCreate() {
     let data = sessionStorage.getItem('login')
     if(data !== 'true')
-    window.location = '/'
+    this.$router.push('/')
   }
 }
 </script>

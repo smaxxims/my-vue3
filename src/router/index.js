@@ -53,7 +53,7 @@ const routes = [
     },
   },
   {
-    path: '/:pathMatch(.*)',
+    path: '/:pathMatch(.*)', //'/:catchAll(.*)'
     component: PageNotFound
   },
 ]
