@@ -52,10 +52,15 @@ const routes = [
       */
     },
   },
-  {
-    path: '/:pathMatch(.*)', //'/:catchAll(.*)'
+  /* {
+    path: '/:pathMatch(.*)', 
     component: PageNotFound
-  },
+    //'/:catchAll(.*)'
+  }, */
+  { 
+    path: '/:pathMatch(.*)', 
+    redirect: '/home' 
+  }
 ]
 
 const router = createRouter({
