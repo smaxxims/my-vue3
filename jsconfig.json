@@ -2,8 +2,8 @@
   "compilerOptions": {
     "target": "es5",
     "module": "esnext",
-    //"baseUrl": "https://vue.dev-maxim.com",
-    "baseUrl": "./",
+    "baseUrl": "https://vue.dev-maxim.com",
+    //"baseUrl": "./",
     "moduleResolution": "node",
     "paths": {
       "@/*": [
