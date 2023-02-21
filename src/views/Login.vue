@@ -67,8 +67,6 @@
             alert('Login fehlgeschlagen.')
             return
           }
-        } {
-          
         }
       }
     }

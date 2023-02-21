@@ -1,23 +1,31 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <Header @logout="logout"/>
+  <Content/>
+  <Footer/>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+  import Header from '@/components/Header.vue'
+  import Content from '@/components/Content.vue'
+  import Footer from '@/components/Footer.vue'
 
-export default {
-  name: 'HomeView',
-  components: {
-    HelloWorld
-  },
-  beforeCreate() {
-    let data = sessionStorage.getItem('login')
-    if(data !== 'true')
-    this.$router.push('/')
+  export default {
+    components: {
+      Header,
+      Content,
+      Footer
+    },
+    beforeCreate() {
+      let data = sessionStorage.getItem('login')
+      if(data !== 'true')
+      this.$router.push('/')
+    },
+    methods: {
+    logout() {
+      console.log('logout')
+      sessionStorage.removeItem('login')
+      this.$router.push('/')
+    }
   }
-}
+  }
 </script>

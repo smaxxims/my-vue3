@@ -2321,8 +2321,11 @@ body {
 .heart {
   color: #e53935;
 }
+.header {
+  height: 70px;
+}
 .footer {
-  height: 100px;
+  height: 50px;
 }
 
 .header-smartphone {

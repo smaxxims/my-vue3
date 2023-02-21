@@ -15,7 +15,7 @@
     },
     methods: {
       go_to_start_page() {
-        this.$router.push('/')
+        this.$router.push('/home')
       }
     }
   }
